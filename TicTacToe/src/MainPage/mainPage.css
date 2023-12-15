@@ -1,0 +1,187 @@
+#main-container {
+  width: 416px;
+  height: 748px;
+  background-color: #192a32;
+  border-radius: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameplay-container {
+  width: 307px;
+  height: 414px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#logo {
+  display: flex;
+}
+#logo h1 {
+  font-family: "Varela Round";
+  margin-top: 0%;
+  font-size: 40px;
+  font-weight: 800;
+}
+#x {
+  color: #32c4c3;
+}
+#o {
+  color: #f7b336;
+}
+
+#player-picker {
+  width: 307px;
+  height: 154px;
+  border-radius: 7px;
+  background: #1f3540;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#player-picker h1 {
+  font-family: DM Sans;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+#player-picker-button {
+  width: 276px;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #192a32;
+}
+#player-picker-button button {
+  width: 127px;
+  height: 30px;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  font-family: "Varela Round";
+
+  font-size: 30px;
+
+  font-weight: 1000;
+  background-color: transparent;
+
+  transition: 0.5s;
+}
+#x-button-span {
+  z-index: 99;
+  color: white;
+  width: 127px;
+  transition: 0.5s;
+}
+#slider {
+  width: 127px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  margin-left: 0px;
+  margin-left: 260px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+/* #x-button-span:hover + #slider {
+  margin-left: 0px;
+}
+
+#x-button-span:hover {
+  color: #192a32;
+}
+
+#x-button:hover + #o-button {
+  color: white;
+/* } */
+#o-button {
+  z-index: 99;
+  color: #192a32;
+}
+/* #o-button:hover {
+  color: #192a32;
+}  */
+
+.menu-button {
+  margin-top: 15px;
+  width: 307px;
+  height: 40px;
+
+  border-radius: 5px;
+  background: #f2b237;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  border-style: none;
+}
+#new-game-button {
+  margin-top: 30px;
+}
+#coming-soon-button {
+  background: #32c4c3;
+}
+#invite-button {
+  width: 225px;
+  height: 33px;
+}
+#empty-space {
+  width: 307px;
+  height: 40px;
+}
+
+/* .Toastify__toast-body {
+  width: 220px;
+height: 41px;
+background: #192A32;
+border-radius: 10px;
+color:  #F2B237;
+}
+.Toastify__toast--rtl {
+  background-color: red;
+} */
+
+.Toastify__toast-container--top-right div {
+  background: #192a32;
+  border-radius: 10px;
+}
+
+.Toastify__toast-body {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  color: #f2b237;
+}
+
+.Toastify__progress-bar {
+  visibility: hidden;
+}
+.Toastify__toast-container--top-right .Toastify__close-button {
+  color: grey;
+}
+.Toastify__toast-container--top-right .Toastify__close-button:hover {
+  /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}

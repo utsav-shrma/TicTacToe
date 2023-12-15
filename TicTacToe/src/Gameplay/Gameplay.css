@@ -1,0 +1,143 @@
+#gameplay-container {
+    width: 318px;
+    height: 444px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #mini-logo {
+    display: flex;
+  }
+  #mini-logo h1 {
+    font-family: "Varela Round";
+    margin: 0%;
+    font-size: 30px;
+    font-weight: 800;
+  }
+  #x {
+    color: #32c4c3;
+  }
+  #o {
+    color: #f7b336;
+  }
+ 
+  #gameplay-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    width: 318px;
+  }
+  
+  #turn-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 86px;
+    height: 39px;
+  
+    border-radius: 10px;
+    background: #1f3540;
+    box-shadow: 0px 3px 4px 0px #000000;
+  }
+  #turn-indicator-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #turn-indicator h1,p {
+    padding: 0%;
+    margin: 0%;
+    color: #acc2cd;
+  }
+  #turn-indicator h1 {
+    padding-bottom: 3px;
+    font-family: "Varela Round";
+    
+  }
+  
+  #turn-indicator p {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  
+  #turn-indicator-icon {
+    width: 30px;
+    height: 30px;
+  
+    border-radius: 6px;
+    position: relative;
+  }
+  
+  #refresh-button {
+    width: 32px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 5px;
+    background: #a7bdc8;
+    box-shadow: 0px 3px 4px 0px #000000;
+  }
+  
+  #game-score {
+    width: 318px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .score-board {
+    width: 86px;
+    height: 49px;
+  
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 4px 0px #000000;
+  }
+  .score-board p {
+    color: #1e1e1e;
+    font-family: DM Sans;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  #player-score {
+    background: #31c4be;
+  }
+  #tie-score {
+    background: #a8bec9;
+  }
+  #pc-score {
+    background: #f2b237;
+  }
+  
+  #game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 86px);
+    grid-template-rows: repeat(3, 86px);
+    gap: 30px;
+  }
+  #game-grid button {
+    background-color: #1f3540;
+    border-radius: 10px;
+    box-shadow: 0px 3px 4px 0px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  #game-grid button:active {
+    box-shadow: 0px 1px 2px 0px #000000;
+  }

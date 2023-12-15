@@ -1,0 +1,75 @@
+#popup-message {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #quit-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 416px;
+    height: 177px;
+    background-color: #192a32;
+   
+    z-index: 2;
+  }
+  
+  #quit-message h1 {
+    font-family: DM Sans;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #f2b237;
+    margin-bottom: 0px;
+  }
+  
+  #quit-message-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 283px;
+  }
+  
+  #quit-message-buttons button {
+    border-radius: 10px;
+  
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 113px;
+    height: 33px;
+  }
+  
+  #play-again-button {
+    background: #31c4be;
+  }
+  
+  #quit-button {
+    background: #f2b237;
+  }
+
+  #popup-container {
+    
+    position: absolute;
+    width: 416px;
+    height: 748px;
+    border-radius: 43px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    justify-content: center;
+     background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); }
+  
+   

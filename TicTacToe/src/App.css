@@ -1,0 +1,22 @@
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#main-container {
+  width: 416px;
+  height: 748px;
+  background-color: #192a32;
+  border-radius: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

@@ -1,0 +1,116 @@
+
+#quote-container {
+    position: absolute;
+    padding: 20px;
+    background-color: #192a32;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 18px;
+    transition: 1s;
+  }
+  
+  #quote-container h1 {
+    font-family: "DM Sans";
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #31c4be;
+    padding: 0%;
+    margin: 0%;
+    
+  }
+  
+  #quote-container p {
+    font-family: "DM Sans";
+  
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: center;
+  
+    color: #f2b237;
+    padding: 0%;
+    margin: 0%;
+    width: 198px;
+    /* height: 122px; */
+    
+    /* margin-top: 10px; */
+  }
+#test{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+  #bottom-logo{
+    
+    position: absolute;
+   
+  }
+  
+  .circle {
+    height: 30px;
+    width: 30px;
+    background-color: #31c4be;
+    border-radius: 50%;
+/*     
+    position: absolute; */
+  }
+  
+  .circle:after {
+    content: "";
+    position: absolute;
+    width: 8px; /* Set the width of the square */
+    height: 8px; /* Set the height of the square */
+    background-color: #192a32;
+  
+    top:8px;
+    left:6px;
+    /* top: 239px;
+    left: 137px; */
+    
+  }
+  
+  .circle2:after {
+    content: "";
+    position: absolute;
+    width: 8px; /* Set the width of the square */
+    height: 8px; /* Set the height of the square */
+    background-color: #192a32;
+    /* background-color: red; */
+    top:15px;
+    left:14px;
+  }
+
+  .custom-toast {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 1040px) {
+    #quote-container {
+      position: absolute;
+      width: 290px;
+      height: 282px;
+      background-color: #192a32;
+      left: 50%;
+      transform: translate(-50%);
+      /* left: 200px; */
+      top: 850px;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      border-radius: 18px;
+      transition: 1s;
+    }
+  }

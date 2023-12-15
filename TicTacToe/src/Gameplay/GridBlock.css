@@ -1,0 +1,15 @@
+.x-symbol {
+    font-family: "Varela Round";
+    color: #32c4c3;
+    font-size: 90px;
+    font-weight: 800;
+    padding-bottom: 12px;
+  }
+
+  .o-symbol {
+    font-family: "Varela Round";
+    color: #f7b336;
+    font-size: 90px;
+    font-weight: 800;
+    padding-bottom: 12px;
+  }
