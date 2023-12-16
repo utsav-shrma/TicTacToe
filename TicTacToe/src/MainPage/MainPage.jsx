@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect}from 'react'
 import './MainPage.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,6 +15,9 @@ function MainPage({setStartGame,setUserLogo}) {
             position: toast.POSITION.TOP_RIGHT,
             
         })};
+      
+        useEffect(()=>{setUserLogo(true)},[]);
+      
 
       let setSlider=(userOption)=>{
         let xButton=document.getElementById("x-button-span");

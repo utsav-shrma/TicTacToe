@@ -2,7 +2,7 @@ import styles from'./QuitPopup.module.css'
 import React from 'react'
 
 
-function QuitPopup({setQuitPopup,setMatrix,setStartGame}) {
+function QuitPopup({setQuitPopup,setMatrix,setStartGame,setTurnCount}) {
 
     let playAgain=()=>{
         //reset matrix,score
@@ -12,8 +12,11 @@ function QuitPopup({setQuitPopup,setMatrix,setStartGame}) {
             [null,null,null],
             [null,null,null]
           ]);
+
+          console.clear();
         
         setQuitPopup(false);
+        setTurnCount(0);
     };
 
     let quit=()=>{
@@ -26,6 +29,7 @@ function QuitPopup({setQuitPopup,setMatrix,setStartGame}) {
         
         setQuitPopup(false);
         setStartGame(false);
+        setTurnCount(0);
     };
 
   return (
