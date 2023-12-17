@@ -13,6 +13,7 @@ function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,
         setResultPopup(false);
         setStartGame(false);
         setTurnCount(0);
+        setResult(null);
         
         
     };
@@ -27,6 +28,7 @@ function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,
         
         setResultPopup(false);
         setTurnCount(0);
+        setResult(null);
         
         
     };

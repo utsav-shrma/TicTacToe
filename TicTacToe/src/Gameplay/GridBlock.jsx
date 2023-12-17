@@ -3,6 +3,9 @@ import './GridBlock.css'
 
 function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setResultPopup,userScore,setUserScore,pcScore,setPcScore,tieScore,setTieScore,turnCount,setTurnCount,result,setResult}) {
 
+
+
+  
     let setIcon=()=>{  
         matrix[i][j]=currTurn;
         setMatrix(matrix);
@@ -10,6 +13,8 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
         setCurrTurn(!currTurn);
         
     };
+
+    let tempresult=null;
 
 
       
@@ -28,7 +33,7 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
       // console.log("");
       const numRows = matrix.length;
         const numCols = matrix[0].length;
-  
+        
         let trueWin=false;
         let falseWin=false;
   
@@ -173,14 +178,15 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
   
   
     let checkDeclareWinner=()=>{
-       result=decideWin();
+        let tempresult=decideWin();
       console.log(matrix);
+      setResult(tempresult);
       setTimeout(()=>{
-        if(result!=null)
+        if(tempresult!=null)
       {
+        console.log("stae is set")
         
-        setResult(result);
-        if(result){
+        if(tempresult){
           console.log("winner is user")
           setResultPopup(true);
           setUserScore(++userScore);
@@ -224,7 +230,7 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
 
     }
     // 
-  return (<button onClick={()=>{gridClick();  }  } disabled={userLogo!=currTurn}  ><h1 className={logo===null?"o-symbol":(logo?"o-symbol":"x-symbol")}>{logo===null?"":(logo?"o":"x")}</h1></button>)
+  return (<button onClick={()=>{if(tempresult==null){console.log("result",result); gridClick();} }  } disabled={userLogo!=currTurn}  ><h1 className={logo===null?"o-symbol":(logo?"o-symbol":"x-symbol")}>{logo===null?"":(logo?"o":"x")}</h1></button>)
 }
 
 export default GridBlock

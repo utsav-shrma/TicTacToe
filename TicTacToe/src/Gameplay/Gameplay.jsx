@@ -19,15 +19,20 @@ function Gameplay({ userLogo, setStartGame }) {
   let [pcScore, setPcScore] = useState(0);
   let [tieScore, setTieScore] = useState(0);
   let [turnCount, setTurnCount] = useState(0);
-  let [isPcTurn,setPcTurn]=useState(false);
+
   
   useEffect(()=>{
     console.log("state update",currTurn,userLogo);
    
     if(currTurn!=userLogo){
+
       console.log('makinfg move');
-      makePCMove();
-      checkDeclareWinner();
+      console.log("checking result for pc moove",result);
+      if(result==null && turnCount<9){
+        makePCMove();
+        console.log("checking result for pc moove",result);
+      }
+      
       
     }
 
@@ -278,14 +283,14 @@ function Gameplay({ userLogo, setStartGame }) {
 
 
   let checkDeclareWinner=()=>{
-     result=decideWin();
+     let tempresult=decideWin();
     console.log(matrix);
     setTimeout(()=>{
-      if(result!=null)
+      if(tempresult!=null)
     {
       
-      setResult(result);
-      if(result){
+      setResult(tempresult);
+      if(tempresult){
         console.log("winner is user gameplay");
         setResultPopup(true);
         setUserScore(++userScore);
@@ -318,7 +323,7 @@ function Gameplay({ userLogo, setStartGame }) {
 
   let makePCMove=()=>
   {
-    if(turnCount<9){
+    
       setTimeout( ()=>{let pcMove=decidePcMove();
       console.log("executed");
         
@@ -335,7 +340,7 @@ function Gameplay({ userLogo, setStartGame }) {
         
       },1000); //delay is in milliseconds 
      
-    }
+    
       
       
   }
