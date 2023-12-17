@@ -1,23 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './GridBlock.css'
 
-function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setResultPopup,userScore,setUserScore,pcScore,setPcScore,tieScore,setTieScore,turnCount,setTurnCount,setResult}) {
+function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setResultPopup,userScore,setUserScore,pcScore,setPcScore,tieScore,setTieScore,turnCount,setTurnCount,result,setResult}) {
 
     let setIcon=()=>{  
         matrix[i][j]=currTurn;
         setMatrix(matrix);
+        
         setCurrTurn(!currTurn);
+        
     };
 
+
+      
+    // useEffect(()=>{
+    //   console.log("Hooook",currTurn,userLogo);
+    //   console.log();
+    //   if(currTurn!=userLogo && turnCount<9)
+    //   {
+    //     // console.log('making a move');
+    //     // makePCMove();
+    //   }
+    
+    // });
     let decideWin=()=>{
       // console.log("");
       // console.log("");
       const numRows = matrix.length;
         const numCols = matrix[0].length;
-
+  
         let trueWin=false;
         let falseWin=false;
-
+  
         let trueWinDiagonal=true;
         let falseWinDiagonal=true;
         for (let row = 0; row < numRows; row++)
@@ -32,16 +46,16 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
           
         }
       }
-
+  
       // console.log("diaogonal check for true",trueWinDiagonal);
       //   console.log("diaogonal check for false",falseWinDiagonal);
-
+  
       trueWin=trueWin||trueWinDiagonal;
       falseWin=falseWin||falseWinDiagonal;
-
+  
        trueWinDiagonal=true;
        falseWinDiagonal=true;
-
+  
        for (let row = 0; row < numRows; row++)
       { 
         // console.log(row,numRows-row-1,matrix[row][numRows-row-1])
@@ -59,19 +73,19 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
         
       trueWin=trueWin||trueWinDiagonal;
       falseWin=falseWin||falseWinDiagonal;
-
+  
         // console.log("diaogonal check for true",trueWinDiagonal);
         // console.log("diaogonal check for false",falseWinDiagonal);
-
+  
         
       
         
-
+  
         for (let row = 0; row < numRows; row++) {
           let trueWinRow=true;
           let falseWinRow=true;
           for (let col = 0; col < numCols; col++) {
-
+  
             if(matrix[row][col]!=null){
               trueWinRow=trueWinRow&&matrix[row][col];
               falseWinRow=falseWinRow&&!matrix[row][col];
@@ -82,7 +96,7 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
             }
             
           }
-
+  
           if(trueWinRow||falseWinRow){
             trueWin=trueWin||trueWinRow;
             falseWin=falseWin||falseWinRow;
@@ -92,7 +106,7 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
           }
           
         }
-
+  
         
   
         for (let col = 0; col < numCols; col++) {
@@ -110,7 +124,7 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
               trueWinCol=false;
               falseWinCol=false;
             }
-
+  
             
           }
           if(trueWinCol||falseWinCol){
@@ -129,58 +143,57 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
       if(userLogo)
       {
         if(trueWin){
-          console.log("userWin");
+          
           return true;
         }
         else if(falseWin){
-          console.log("pcWin");
+          
           return false;
         }
-        else{console.log("Not Yet");
+        else{
       return null;}
   
       }
       else{
         if(trueWin){
-          console.log("pcWin");
+          
           return false;
         }
         else if(falseWin){
-          console.log("userWin");
+          
           return true;
         }
-        else{console.log("Not Yet");
+        else{
       return null;}
   
       }
-
+  
       
     };
-
-    let gridClick=()=>{
-      if(logo===null) {setIcon();}
-
-      setTurnCount(++turnCount);
-
-      let result=decideWin();
-      
-      if(result!=null)
+  
+  
+    let checkDeclareWinner=()=>{
+       result=decideWin();
+      console.log(matrix);
+      setTimeout(()=>{
+        if(result!=null)
       {
-        console.log('result',result);
+        
         setResult(result);
         if(result){
-          
+          console.log("winner is user")
           setResultPopup(true);
           setUserScore(++userScore);
         }
         else{
+          console.log("winner is pc")
           setResultPopup(true);
           setPcScore(++pcScore);
            
         }
       }
       else{
-
+  
         if(turnCount===9){
           setResultPopup(true);
           setTieScore(++tieScore);
@@ -188,10 +201,30 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
         }
         //check if all turns have been made or not
           //set result tie or ignore
-
+  
       }
+      },1000);
+  
+      
+      
+  
     }
-  return (<button onClick={gridClick}><h1 className={logo===null?"o-symbol":(logo?"o-symbol":"x-symbol")}>{logo===null?"":(logo?"o":"x")}</h1></button>)
+  
+
+    let gridClick=  ()=>{
+      
+      if(logo===null) {
+        setIcon();
+      }
+      setTurnCount(++turnCount);
+      checkDeclareWinner();
+      // makePCMove();
+      //if(result==null){console.log("result",result); gridClick();}
+      
+
+    }
+    // 
+  return (<button onClick={()=>{gridClick();  }  } disabled={userLogo!=currTurn}  ><h1 className={logo===null?"o-symbol":(logo?"o-symbol":"x-symbol")}>{logo===null?"":(logo?"o":"x")}</h1></button>)
 }
 
 export default GridBlock

@@ -1,6 +1,6 @@
 import React from 'react'
 import './ResultPopup.css'
-function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,userLogo}) {
+function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,userLogo,setResult}) {
 
     let quit=()=>{
         //reset matrix,score
@@ -13,6 +13,8 @@ function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,
         setResultPopup(false);
         setStartGame(false);
         setTurnCount(0);
+        
+        
     };
 
     let playAgain=()=>{
@@ -25,6 +27,8 @@ function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,
         
         setResultPopup(false);
         setTurnCount(0);
+        
+        
     };
 
     let tieMessage='IT\'S A TIE!';
@@ -38,7 +42,7 @@ function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,
         <div id="popup-message">
     <div id="winner-message">
       <h1 id="result-message">{result==null?tieMessage:(result?userWinMessage:pcWinMessage)}</h1>
-      {console.log(userLogo)}
+      
       <div id="winner-declaration">{result==null?"":(<h1 id={(result?userLogo:!userLogo)?"o-message-symbol":"x-message-symbol"}>{(result?userLogo:!userLogo)?'o':'x'}</h1>)}<h1 id="round-message">{result==null?tieRematchMessage:resultMessage}</h1></div>
       
       <div id="quit-message-buttons">
