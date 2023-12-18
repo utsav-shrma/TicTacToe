@@ -10,7 +10,7 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
         matrix[i][j]=currTurn;
         setMatrix(matrix);
         
-        setCurrTurn(!currTurn);
+        setCurrTurn(!userLogo);
         
     };
 
@@ -199,11 +199,11 @@ function GridBlock({userLogo,logo,i,j,matrix,setMatrix,currTurn,setCurrTurn,setR
         }
       }
       else{
-  
+        
         if(turnCount===9){
           setResultPopup(true);
           setTieScore(++tieScore);
-          setResult(result);
+          
         }
         //check if all turns have been made or not
           //set result tie or ignore

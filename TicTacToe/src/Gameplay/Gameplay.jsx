@@ -14,11 +14,12 @@ function Gameplay({ userLogo, setStartGame }) {
   let [resultPopup, setResultPopup] = useState(false);
   let [quitPopup, setQuitPopup] = useState(false);
   let [result, setResult] = useState(null);
-  let [currTurn, setCurrTurn] = useState(userLogo);
   let [userScore, setUserScore] = useState(0);
   let [pcScore, setPcScore] = useState(0);
   let [tieScore, setTieScore] = useState(0);
   let [turnCount, setTurnCount] = useState(0);
+  let [conseQuitiveTurn,setConseQuitiveTurn]=useState(userLogo);
+  let [currTurn, setCurrTurn] = useState(userLogo);
 
   
   useEffect(()=>{
@@ -27,10 +28,10 @@ function Gameplay({ userLogo, setStartGame }) {
     if(currTurn!=userLogo){
 
       console.log('makinfg move');
-      console.log("checking result for pc moove",result);
+      
       if(result==null && turnCount<9){
         makePCMove();
-        console.log("checking result for pc moove",result);
+        
       }
       
       
@@ -307,7 +308,7 @@ function Gameplay({ userLogo, setStartGame }) {
       if(turnCount===9){
         setResultPopup(true);
         setTieScore(++tieScore);
-        setResult(result);
+        
       }
       //check if all turns have been made or not
         //set result tie or ignore
@@ -349,8 +350,8 @@ function Gameplay({ userLogo, setStartGame }) {
   /////////////////
 
   return (<>
-    {(quitPopup) ? <QuitPopup setQuitPopup={setQuitPopup} setMatrix={setMatrix} setStartGame={setStartGame} setTurnCount={setTurnCount} ></QuitPopup> : ""}
-    {(resultPopup) ? <ResultPopup setResultPopup={setResultPopup} setMatrix={setMatrix} setStartGame={setStartGame} setTurnCount={setTurnCount} result={result} userLogo={userLogo} setResult={setResult}></ResultPopup> : ""}
+    {(quitPopup) ? <QuitPopup setQuitPopup={setQuitPopup} setMatrix={setMatrix} setStartGame={setStartGame} setTurnCount={setTurnCount} setCurrTurn={setCurrTurn}conseQuitiveTurn={conseQuitiveTurn} ></QuitPopup> : ""}
+    {(resultPopup) ? <ResultPopup setResultPopup={setResultPopup} setMatrix={setMatrix} setStartGame={setStartGame} setTurnCount={setTurnCount} result={result} userLogo={userLogo} setResult={setResult} currTurn={currTurn} setCurrTurn={setCurrTurn} conseQuitiveTurn={conseQuitiveTurn} setConseQuitiveTurn={setConseQuitiveTurn}></ResultPopup> : ""}
     <div id="gameplay-container">
 
       <div id="gameplay-top">

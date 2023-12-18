@@ -1,6 +1,6 @@
 import React from 'react'
 import './ResultPopup.css'
-function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,userLogo,setResult}) {
+function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,userLogo,setResult,currTurn,setCurrTurn,conseQuitiveTurn,setConseQuitiveTurn}) {
 
     let quit=()=>{
         //reset matrix,score
@@ -29,6 +29,9 @@ function ResultPopup({setResultPopup,setMatrix,setStartGame,setTurnCount,result,
         setResultPopup(false);
         setTurnCount(0);
         setResult(null);
+        setCurrTurn(!conseQuitiveTurn);
+        setConseQuitiveTurn(!conseQuitiveTurn);
+        console.log("Next Turn is --------------->", currTurn);
         
         
     };
